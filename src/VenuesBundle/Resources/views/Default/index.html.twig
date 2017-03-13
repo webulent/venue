@@ -1,0 +1,42 @@
+{% extends 'VenuesBundle::base.html.twig' %}
+
+{% block body %}
+
+    <h1>Venues</h1>
+
+    <hr />
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Venue Name</th>
+            <th>Venue Type</th>
+            <th>E-mail</th>
+            <th>Venue Manager</th>
+            <th> - </th>
+        </tr>
+        </thead>
+        <tbody>
+
+            {% for venue in venues %}
+
+                <tr>
+                    <td>{{ venue.id }}</td>
+                    <td>{{ venue.name }}</td>
+                    <td>{{ venue.venueType }}</td>
+                    <td><a href="mailto:{{ venue.email }}">{{ venue.email }}</a></td>
+                    <td>{{ venue.venueManager }}</td>
+                    <td width="200">
+                        <a href="{{ path('view_venue', {'id': venue.id}) }}" class="btn btn-default btn-sm">View</a>
+                        <a href="{{ path('update_venue', {'id': venue.id}) }}" class="btn btn-primary btn-sm">Update</a>
+                        <a href="{{ path('delete_venue', {'id': venue.id}) }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}

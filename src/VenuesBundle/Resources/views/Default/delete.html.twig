@@ -1,0 +1,20 @@
+{% extends 'VenuesBundle::base.html.twig' %}
+
+{% block body %}
+
+    <h2 class="page-header">
+        Delete this Venue <i>({{ venue.name }})</i>
+        <a href="javascript:history.back()" class="btn btn-default btn-sm pull-right"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back</a>
+    </h2>
+
+    <div class="alert alert-danger alert-dismissible fade in" role="alert">
+        <a href="javascript:history.back()" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></a>
+        <h4>Are you sure?!</h4>
+        <p>If you delete this Venue, you will lost all data for this Venue.</p>
+        <p>
+            <a href="{{ path('delete_venue', {'id': venue.id, 'confirm' : 1 }) }}" class="btn btn-danger">Yes, delete this Venue!</a>
+            <a href="javascript:history.back()" class="btn btn-default">Cancel</a>
+        </p>
+    </div>
+
+{% endblock %}

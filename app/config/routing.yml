@@ -1,0 +1,5 @@
+venues:
+    resource: "@VenuesBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

@@ -1,0 +1,24 @@
+{% extends 'VenuesBundle::base.html.twig' %}
+
+{% block body %}
+
+    <h2 class="page-header">
+        View
+        <a href="javascript:history.back()" class="btn btn-default btn-sm pull-right"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back</a>
+    </h2>
+
+    <ul class="list-group">
+        <li class="list-group-item"><b>Venue Name:</b> {{ venue.name }}</li>
+        <li class="list-group-item"><b>Venue Type:</b> {{ venue.venueType }}</li>
+        <li class="list-group-item"><b>Venue Capacity:</b> {{ venue.capacity }}</li>
+        <li class="list-group-item"><b>Venue Manager:</b> {{ venue.VenueManager }}</li>
+        <li class="list-group-item"><b>Venue Email:</b> {{ venue.email }}</li>
+        <li class="list-group-item"><b>Venue Description:</b> {{ venue.description }}</li>
+        <li class="list-group-item"><b>Venue Address:</b> {{ venue.address }}</li>
+        <li class="list-group-item"><b>Created Date:</b> {{ venue.createdDate|date('F j, Y, g:i a') }}</li>
+    </ul>
+
+    <a href="{{ path('update_venue', {'id': venue.id}) }}" class="btn btn-primary btn-sm">Update</a>
+    <a href="{{ path('delete_venue', {'id': venue.id}) }}" class="btn btn-danger btn-sm">Delete</a>
+
+{% endblock %}
